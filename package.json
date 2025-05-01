@@ -1,0 +1,84 @@
+{
+  "name": "rem-it",
+  "displayName": "rem.it",
+  "description": "Instantly convert all px units to rem in your CSS or SCSS files — clean, scalable, and lightning fast. Supports custom base values. One-click transformation for modern, responsive stylesheets.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:rem-it.convertPxToRem"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/your-repo.git"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "rem-it.convertPxToRem",
+        "title": "Remmify"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "rem-it.convertPxToRem",
+        "key": "ctrl+alt+r",
+        "mac": "cmd+alt+r",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "rem.it Settings",
+      "properties": {
+        "rem-it.basePx": {
+          "type": "number",
+          "default": 16,
+          "description": "Base pixel value that equals 1rem. Example: 1rem = 16px"
+        },
+        "rem-it.includeFileTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            ".css",
+            ".scss",
+            ".less"
+          ],
+          "description": "File types to apply px to rem conversion to"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.93.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
+  }
+}
