@@ -3,6 +3,7 @@
   "displayName": "rem.it",
   "description": "Instantly convert all px units to rem in your CSS or SCSS files — clean, scalable, and lightning fast. Supports custom base values. One-click transformation for modern, responsive stylesheets.",
   "version": "0.0.1",
+  "publisher": "VimalSvr",
   "engines": {
     "vscode": "^1.93.0"
   },
